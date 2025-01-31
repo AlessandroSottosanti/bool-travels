@@ -1,5 +1,5 @@
 import { useState } from "react";
-import viaggi from "../data/viaggi"
+import {viaggi} from "../data/viaggi.js"
 const TravelersPage = () => {
 // // Creo lo state per settare la lista in base al viaggio cliccato nella pagina home
 // const [travelers, setTravelers] = useState([]);
@@ -35,7 +35,10 @@ return(
     <>
     <div>
           <h2>nome Viaggio</h2>
-          {viaggio.ma
+          {viaggio.map((curTraveler)=>(
+            <div>
+          
+          ))
             
           }
   
