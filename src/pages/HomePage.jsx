@@ -3,7 +3,7 @@ import { viaggi } from "../data/viaggi.js";
 
 const HomePage = () => {
     const [viaggioSelezionato, setViaggioSelezionato] = useState(null);
-
+    console.log("viaggioSelezionato:", viaggioSelezionato);
     return (
         <div>
             {!viaggioSelezionato ? (
