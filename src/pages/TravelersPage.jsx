@@ -34,9 +34,11 @@ const viaggiatoriFiltrati = viaggi
 return(
     <>
     <div>
+        
           <h2>nome Viaggio</h2>
           {viaggio.map((curTraveler)=>(
-            <div>
+            <div>{curTraveler.nome}</div>
+           
           
           ))
             
