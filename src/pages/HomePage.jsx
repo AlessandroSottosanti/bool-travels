@@ -3,40 +3,51 @@ import { viaggi } from "../data/viaggi.js";
 
 const HomePage = () => {
     const [viaggioSelezionato, setViaggioSelezionato] = useState(null);
-    console.log("viaggioSelezionato:", viaggioSelezionato);
-    return (
-        <div>
-            {!viaggioSelezionato ? (
-                <div className="container d-flex flex-column gap-5 my-5">
-                    <h1>Lista Viaggi</h1>
 
-                    {viaggi.map((viaggio, index) => (
-                        <div key={index} className="card p-3 d-flex">
-                            <h3>{viaggio.destinazione}</h3>
-                            <p>Partenza: {viaggio.dataPartenza}</p>
-                            <p>Ritorno: {viaggio.dataRitorno}</p>
-                            <p>Guide: {viaggio.guide.join(", ")}</p>
-                            <button className="btn btn-primary" onClick={() => setViaggioSelezionato(viaggio)}>
-                                Vedi Dettagli
-                            </button>
-                        </div>
-                    ))}
+    return (
+        <div className="container my-5">
+            {!viaggioSelezionato ? (
+                <div className="text-center">
+                    <h1 className="mb-4">Lista Viaggi</h1>
+                    <div className="row">
+                        {viaggi.map((viaggio, index) => (
+                            <div key={index} className="col-md-4 mb-4">
+                                <div className="card shadow p-3">
+                                    <div className="card-body">
+                                        <h3 className="card-title">{viaggio.destinazione}</h3>
+                                        <p className="card-text"><strong>Partenza:</strong> {viaggio.dataPartenza}</p>
+                                        <p className="card-text"><strong>Ritorno:</strong> {viaggio.dataRitorno}</p>
+                                        <p className="card-text"><strong>Guide:</strong> {viaggio.guide.join(", ")}</p>
+                                        <button className="btn btn-primary mt-2 w-100" onClick={() => setViaggioSelezionato(viaggio)}>
+                                            Vedi Dettagli
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             ) : (
-                <div>
-                    <button onClick={() => setViaggioSelezionato(null)}>Torna Indietro</button>
-                    <h2>{viaggioSelezionato.destinazione}</h2>
-                    <p>Partenza: {viaggioSelezionato.dataPartenza}</p>
-                    <p>Ritorno: {viaggioSelezionato.dataRitorno}</p>
-                    <p>Guide: {viaggioSelezionato.guide.join(", ")}</p>
-                    <h3>Lista Viaggiatori</h3>
-                    <ul>
-                        {viaggioSelezionato.viaggiatori.map((viaggiatore, index) => (
-                            <li key={index}>
-                                {viaggiatore.nome} {viaggiatore.cognome} - {viaggiatore.mail} - {viaggiatore.telefono}
-                            </li>
-                        ))}
-                    </ul>
+                <div className="container text-center">
+                    <button className="btn btn-danger mb-3" onClick={() => setViaggioSelezionato(null)}>
+                        Torna Indietro
+                    </button>
+                    <div className="card shadow p-4">
+                        <div className="card-body">
+                            <h2 className="card-title">{viaggioSelezionato.destinazione}</h2>
+                            <p className="card-text"><strong>Partenza:</strong> {viaggioSelezionato.dataPartenza}</p>
+                            <p className="card-text"><strong>Ritorno:</strong> {viaggioSelezionato.dataRitorno}</p>
+                            <p className="card-text"><strong>Guide:</strong> {viaggioSelezionato.guide.join(", ")}</p>
+                            <h3 className="mt-3">Lista Viaggiatori</h3>
+                            <ul className="list-group">
+                                {viaggioSelezionato.viaggiatori.map((viaggiatore, index) => (
+                                    <li key={index} className="list-group-item">
+                                        {viaggiatore.nome} {viaggiatore.cognome} - {viaggiatore.mail} - {viaggiatore.telefono}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>
