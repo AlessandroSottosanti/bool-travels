@@ -226,4 +226,4 @@ const viaggi = [
     }
 ];
 
-console.log(viaggi);
+
