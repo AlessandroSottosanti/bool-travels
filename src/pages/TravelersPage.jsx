@@ -6,7 +6,7 @@ const TravelersPage = () => {
     const [selectTraveler, setSelectTraveler] = useState(null);
     //   funzione che seleziona il passeggero e apre la card al click
     const handlerTravelClick = (traveler) => {
-        setSelectTraveler(selectTraveler === traveler);
+        setSelectTraveler(traveler);
     };
 
 
@@ -20,56 +20,50 @@ const TravelersPage = () => {
         : tuttiIViaggiatori;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <>
             <div>
 
-                <div>
-                    <input
-                        type="text"
-                        placeholder="Cerca per cognome"
-                        value={query}
-                        onChange={event => setQuery(event.target.value)}
-                    />
+                <div className="d-flex justify-content-center mb-4">
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Cerca per cognome"
+                            value={query}
+                            onChange={event => setQuery(event.target.value)}
+                        />
 
-                    <button className="btn btn-primary" onClick={() => setSearch(query)}>Cerca</button>
+                        <button className="btn btn-primary" onClick={() => setSearch(query)}>Cerca</button>
+                    </div>
                 </div>
 
-                <h2>nome Viaggio</h2>
+                <h2 className="text-center">nome Viaggio</h2>
 
-                <ul>{viaggiatoriFiltrati.map((curTraveler, index) => (
-                    <li key={index}>
+                <div className="d-flex justify-content-around">
+                    <div>
+                        <ul className="list-unstyled">
+                            {viaggiatoriFiltrati.map((curTraveler, index) => (
+                                <li key={index}>
+                                    <button onClick={() => handlerTravelClick(curTraveler)}>{curTraveler.nome} {curTraveler.cognome}</button>
 
-                        <button onClick={() => handlerTravelClick(curTraveler)}>{curTraveler.nome} {curTraveler.cognome}</button>
-
-
-                    </li>
-                    //    card layout
-
-
-                ))
-
-                }</ul>
+                                </li>
 
 
+                            ))
+                            }
+                        </ul>
+                    </div>
 
-                <div>
-                    <div>{selectTraveler.mail}</div>
-                    <div>{selectTraveler.telefono}</div>
+                    <div>
+                        {selectTraveler && (
+                            <div>
+                                <div>{selectTraveler.nome}</div>
+                                <div>{selectTraveler.cognome}</div>
+                                <div>{selectTraveler.telefono}</div>
+                                <div>{selectTraveler.mail}</div>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
 
