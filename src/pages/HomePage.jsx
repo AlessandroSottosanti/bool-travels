@@ -7,14 +7,16 @@ const HomePage = () => {
     return (
         <div className="container my-5">
             {!viaggioSelezionato ? (
-                <div className="text-center">
+                <div>
                     <h1 className="mb-4">Lista Viaggi</h1>
                     <div className="row">
                         {viaggi.map((viaggio, index) => (
                             <div key={index} className="col-md-4 mb-4">
-                                <div className="card shadow p-3">
+                                <div className="card shadow ">
+                                    <div className="card-header">
+                                    <h3 className="card-title">{viaggio.destinazione}</h3>
+                                    </div>
                                     <div className="card-body">
-                                        <h3 className="card-title">{viaggio.destinazione}</h3>
                                         <p className="card-text"><strong>Partenza:</strong> {viaggio.dataPartenza}</p>
                                         <p className="card-text"><strong>Ritorno:</strong> {viaggio.dataRitorno}</p>
                                         <p className="card-text"><strong>Guide:</strong> {viaggio.guide.join(", ")}</p>
@@ -28,7 +30,7 @@ const HomePage = () => {
                     </div>
                 </div>
             ) : (
-                <div className="container text-center">
+                <div className="container">
                     <button className="btn btn-danger mb-3" onClick={() => setViaggioSelezionato(null)}>
                         Torna Indietro
                     </button>
