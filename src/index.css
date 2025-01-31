@@ -11,8 +11,19 @@ body,
   flex-direction: column;
 }
 
-.navstyle {
+
+.navstyle{
   display: flex;
   justify-content: center;
   width: 100%;
+  min-height: 100px;
+}
+
+.homeImg{
+  position: relative;
+  top: -100px;
+}
+
+.navbar .img {
+  object-fit: cover;
 }
