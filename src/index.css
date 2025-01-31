@@ -20,10 +20,7 @@ body,
 }
 
 .homeImg{
-  position: relative;
-  top: -100px;
-}
-
-.navbar .img {
+  height: 100%;
   object-fit: cover;
 }
+
