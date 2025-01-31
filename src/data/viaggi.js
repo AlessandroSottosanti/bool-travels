@@ -1,5 +1,6 @@
 const viaggi = [
     {
+        id: 1,
         destinazione: "Roma, Italia",
         dataPartenza: "2023-11-01",
         dataRitorno: "2023-11-07",
@@ -15,6 +16,7 @@ const viaggi = [
         ]
     },
     {
+        id: 2,
         destinazione: "Parigi, Francia",
         dataPartenza: "2023-11-10",
         dataRitorno: "2023-11-15",
@@ -30,6 +32,7 @@ const viaggi = [
         ]
     },
     {
+        id: 3,
         destinazione: "New York, USA",
         dataPartenza: "2023-12-05",
         dataRitorno: "2023-12-12",
@@ -45,6 +48,7 @@ const viaggi = [
         ]
     },
     {
+        id: 4,
         destinazione: "Tokyo, Giappone",
         dataPartenza: "2024-01-15",
         dataRitorno: "2024-01-22",
@@ -60,6 +64,7 @@ const viaggi = [
         ]
     },
     {
+        id: 5,
         destinazione: "Londra, Regno Unito",
         dataPartenza: "2024-02-01",
         dataRitorno: "2024-02-08",
@@ -75,6 +80,7 @@ const viaggi = [
         ]
     },
     {
+        id: 6,
         destinazione: "Barcellona, Spagna",
         dataPartenza: "2024-03-10",
         dataRitorno: "2024-03-17",
@@ -90,6 +96,7 @@ const viaggi = [
         ]
     },
     {
+        id: 7,
         destinazione: "Berlino, Germania",
         dataPartenza: "2024-04-05",
         dataRitorno: "2024-04-12",
@@ -105,6 +112,7 @@ const viaggi = [
         ]
     },
     {
+        id: 8,
         destinazione: "Sydney, Australia",
         dataPartenza: "2024-05-01",
         dataRitorno: "2024-05-10",
@@ -120,6 +128,7 @@ const viaggi = [
         ]
     },
     {
+        id: 9,
         destinazione: "Rio de Janeiro, Brasile",
         dataPartenza: "2024-06-15",
         dataRitorno: "2024-06-22",
@@ -135,6 +144,7 @@ const viaggi = [
         ]
     },
     {
+        id: 10,
         destinazione: "Città del Capo, Sudafrica",
         dataPartenza: "2024-07-01",
         dataRitorno: "2024-07-10",
@@ -150,6 +160,7 @@ const viaggi = [
         ]
     },
     {
+        id: 11,
         destinazione: "Reykjavik, Islanda",
         dataPartenza: "2024-08-01",
         dataRitorno: "2024-08-10",
@@ -165,6 +176,7 @@ const viaggi = [
         ]
     },
     {
+        id: 12,
         destinazione: "Bangkok, Thailandia",
         dataPartenza: "2024-09-15",
         dataRitorno: "2024-09-25",
@@ -180,6 +192,7 @@ const viaggi = [
         ]
     },
     {
+        id: 13,
         destinazione: "Dubai, Emirati Arabi Uniti",
         dataPartenza: "2024-10-01",
         dataRitorno: "2024-10-08",
@@ -195,6 +208,7 @@ const viaggi = [
         ]
     },
     {
+        id: 14,
         destinazione: "Vienna, Austria",
         dataPartenza: "2024-11-10",
         dataRitorno: "2024-11-17",
@@ -210,6 +224,7 @@ const viaggi = [
         ]
     },
     {
+        id: 15,
         destinazione: "Praga, Repubblica Ceca",
         dataPartenza: "2024-12-01",
         dataRitorno: "2024-12-08",

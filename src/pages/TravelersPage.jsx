@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { viaggi } from "../data/viaggi.js"
 import { useNavigate } from "react-router-dom";
+import styles from './travelersPage.module.css'
+
 const TravelersPage = () => {
 
     // creo lo state che salva il passeggero cliccato per la card
@@ -23,8 +25,8 @@ const TravelersPage = () => {
 
     return (
         <>
-            <div>
-            <button className="btn btn-primary" onClick={() => navigate(-1)}>Indietro</button>
+            <div className={`${styles.sfondo}`}>{/*   è un esempio Bart, tranquillo */}
+            <button className="btn btn-primary " onClick={() => navigate(-1)}>Indietro</button>
 
                 <div className="d-flex justify-content-center mb-4">
                     <div>
@@ -41,7 +43,7 @@ const TravelersPage = () => {
 
                 <h2 className="text-center">nome Viaggio</h2>
 
-                <div className="d-flex justify-content-around">
+                <div className="d-flex justify-content-around ">
                     <div>
                         <ul className="list-unstyled">
                             {viaggiatoriFiltrati.map((curTraveler, index) => (
