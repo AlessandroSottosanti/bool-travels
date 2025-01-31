@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { viaggi } from "../data/viaggi.js"
+import { useNavigate } from "react-router-dom";
 const TravelersPage = () => {
 
     // creo lo state che salva il passeggero cliccato per la card
@@ -9,7 +10,7 @@ const TravelersPage = () => {
         setSelectTraveler(traveler);
     };
 
-
+    const navigate = useNavigate();
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState("");
 
@@ -23,6 +24,7 @@ const TravelersPage = () => {
     return (
         <>
             <div>
+            <button className="btn btn-primary" onClick={() => navigate(-1)}>Indietro</button>
 
                 <div className="d-flex justify-content-center mb-4">
                     <div>
