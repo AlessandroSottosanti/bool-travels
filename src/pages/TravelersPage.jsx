@@ -25,7 +25,7 @@ const TravelersPage = () => {
 
     return (
         <>
-            <div className={`${styles.sfondo}`}>{/*   è un esempio Bart, tranquillo */}
+            <div>
             <button className="btn btn-primary " onClick={() => navigate(-1)}>Indietro</button>
 
                 <div className="d-flex justify-content-center mb-4">
@@ -48,7 +48,7 @@ const TravelersPage = () => {
                         <ul className="list-unstyled">
                             {viaggiatoriFiltrati.map((curTraveler, index) => (
                                 <li key={index}>
-                                    <button onClick={() => handlerTravelClick(curTraveler)}>{curTraveler.nome} {curTraveler.cognome}</button>
+                                    <button className={`${styles.buttontravelers}`} onClick={() => handlerTravelClick(curTraveler)}>{curTraveler.nome} {curTraveler.cognome}</button>
 
                                 </li>
 

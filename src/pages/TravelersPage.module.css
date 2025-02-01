@@ -1,4 +1,10 @@
-.sfondo {
-    background-color: red;
-    color: white;
+
+.buttontravelers{
+    height: 50px;
+  width: 100%;
+  background-color: #f2f5f8;
+  border: none;
+  font-family: cursive;
+  cursor: pointer;
+  margin: 2px;
 }
