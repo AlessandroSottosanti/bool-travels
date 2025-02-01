@@ -1,3 +1,39 @@
-.sfondo {
+
+.buttontravelers{
+  height: 50px;
+width: 100%;
+background-color: #f2f5f8;
+border: none;
+font-family: cursive;
+cursor: pointer;
+margin: 2px;
+}
+
+.buttonBack{
+border: 1px solid black;  
+background-color: white;
+margin: 5px;
+padding: 3px;
+cursor: pointer;
+
+}
+
+/* card layout */
+
+.containerCard{
+border: 1px solid black;
+height: 150px;
+
+}
+
+.titleCard{
+padding:10px;
+border: 2px solid black;
+text-align: center;
+background-color: #f2f5f8;
+}
+
+.dettailsCard{
+padding: 10px;
 
 }

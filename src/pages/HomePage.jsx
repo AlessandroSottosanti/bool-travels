@@ -43,7 +43,7 @@ const HomePage = () => {
                                     <p className="card-text"><strong>Guide:</strong>
                                         {viaggio.guide.map(guida => ` ${guida.nome} ${guida.cognome}`).join(", ")}
                                     </p>
-                                    <Link to={`travelers/${viaggio.id}`} className="btn btn-primary mt-2 w-100" onClick={() => setViaggioSelezionato(viaggio)}>
+                                    <Link to={`travelers/${viaggio.slug}`} className="btn btn-primary mt-2 w-100" onClick={() => setViaggioSelezionato(viaggio)}>
                                         Vedi Dettagli
                                     </Link>
                                 </div>
