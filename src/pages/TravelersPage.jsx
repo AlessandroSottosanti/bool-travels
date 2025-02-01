@@ -26,7 +26,7 @@ const TravelersPage = () => {
     return (
         <>
             <div>
-            <button className="btn btn-primary " onClick={() => navigate(-1)}>Indietro</button>
+            <button className={`${styles.buttonBack}`} onClick={() => navigate(-1)}>Indietro</button>
 
                 <div className="d-flex justify-content-center mb-4">
                     <div>
@@ -37,7 +37,7 @@ const TravelersPage = () => {
                             onChange={event => setQuery(event.target.value)}
                         />
 
-                        <button className="btn btn-primary" onClick={() => setSearch(query)}>Cerca</button>
+                        <button className={`${styles.buttonBack}`} onClick={() => setSearch(query)}>Cerca</button>
                     </div>
                 </div>
 
@@ -60,11 +60,11 @@ const TravelersPage = () => {
 
                     <div>
                         {selectTraveler && (
-                            <div>
-                                <div>{selectTraveler.nome}</div>
-                                <div>{selectTraveler.cognome}</div>
-                                <div>{selectTraveler.telefono}</div>
-                                <div>{selectTraveler.mail}</div>
+                            <div className={`${styles.containerCard}`}>
+                                <div className={`${styles.titleCard}`}>{selectTraveler.nome}{selectTraveler.cognome}</div>
+                                
+                                <div className={`${styles.dettailsCard}`}>Numero di telefono: {selectTraveler.telefono}</div>
+                                <div className={`${styles.dettailsCard}`} >email: {selectTraveler.mail}</div>
                             </div>
                         )}
                     </div>
