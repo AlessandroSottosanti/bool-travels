@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { viaggi } from "../data/viaggi.js"
+
 import { useNavigate } from "react-router-dom";
 import styles from './travelersPage.module.css'
 
