@@ -16,6 +16,9 @@ a {
   text-decoration: none;
   color: black;
 }
+img{
+  max-width: 100%;
+}
 
 .bodyHome {
  height: max-content;
@@ -39,11 +42,8 @@ a {
 .navstyle {
   display: flex;
   justify-content: center;
-  width: 100%;
-  min-height: 100px;
   background-color: #ffa141;
-  background-size: 100%;
-  background-repeat: no-repeat;
+
 }
 
 .homeImg {
