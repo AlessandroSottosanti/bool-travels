@@ -25,7 +25,7 @@ const HomePage = () => {
             <div>
                 <h1 className="mb-4">Lista Viaggi</h1>
                 <div className="row ">
-                    {viaggi && viaggi.map((viaggio, index) => (
+                    {viaggi && viaggi.map((viaggio, index) => ( viaggio.inCorso ? (
                         <div key={index} className="col-md-4 mb-4">
                             <div className="card shadow ">
                                 <div className="card-header">
@@ -44,12 +44,16 @@ const HomePage = () => {
                                     <p className="card-text"><strong>Guide:</strong>
                                         {viaggio.guide.map(guida => ` ${guida.nome} ${guida.cognome}`).join(", ")}
                                     </p>
+
+                                    {/* <div>{viaggio.inCorso? (<p>Evento in corso</p>) : (<p>Evento scaduto</p>) }</div> */}
                                     <Link to={`travelers/${viaggio.slug}`} className="btn btn-primary mt-2 w-100" onClick={() => setViaggioSelezionato(viaggio)}>
                                         Vedi Dettagli
                                     </Link>
                                 </div>
                             </div>
                         </div>
+                    ):
+                    (<></>)
                     ))}
                 </div>
             </div>
