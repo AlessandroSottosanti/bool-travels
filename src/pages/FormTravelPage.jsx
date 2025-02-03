@@ -71,8 +71,9 @@ function FormTravelPage() {
 
     return (
         <>
+        <section>
             <div className="container my-4">
-                <Link className="btn btn-primary" to={`/`}>Indietro</Link>
+                <Link className="genericButton" to={`/`}>Indietro</Link>
 
                 <form onSubmit={handleFormSubmit}>
                     <h2 className="text-center">Aggiungi un viaggio</h2>
@@ -107,9 +108,10 @@ function FormTravelPage() {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="genericButton">Submit</button>
                 </form>
             </div>
+            </section>
         </>
     )
 }
