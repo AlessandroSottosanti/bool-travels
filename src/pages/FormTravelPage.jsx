@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const apiUrl = import.meta.env.VITE_API_URL;
 
 function FormTravelPage() {
     const DefaultFormData = {
@@ -40,16 +43,29 @@ function FormTravelPage() {
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
-        const dataToSend = new FormData();
-        for (let key in viaggioData) {
-            if (key === "guide") {
-                dataToSend.append(key, JSON.stringify(viaggioData[key]));
-            } else {
-                dataToSend.append(key, viaggioData[key]);
-            }
-        }
+        // Creazione dell'oggetto da inviare
+        const viaggioToSend = {
+            ...viaggioData,
+            guide: viaggioData.guide // Converti l'array guide in stringa
+        };
 
-        navigate("/formtravelerspage", { state: { viaggioData } });
+        console.log("Dati inviati:", viaggioToSend); // Debug
+
+        // Effettua la chiamata POST con then/catch
+        axios.post(`${apiUrl}/travels`, viaggioToSend, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => {
+            console.log("Viaggio creato con successo:", response.data);
+            setViaggioData(DefaultFormData);
+            navigate("/formtravelerspage", { state: { viaggioData: response.data } });
+        })
+        .catch((error , response) => {
+            console.error("Errore durante l'invio dei dati:", error.response?.data || error.message);
+            alert("Errore durante l'invio del viaggio. Riprova più tardi.");
+        });
     };
 
 
@@ -72,7 +88,7 @@ function FormTravelPage() {
                         <label htmlFor="ritorno">Data di ritorno</label>
                         <input type="date" className="form-control" id="ritorno" name="dataRitorno" onChange={handleInputChange} />
                     </div>
-                    <div class="form-group mb-3">
+                    <div className="form-group mb-3">
                         <label htmlFor="guide">Guide</label>
                         <input
                             type="text"
