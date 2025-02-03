@@ -46,68 +46,70 @@ const TravelersPage = () => {
 
     return (
         <>
-            <div>
-                <button className={`${styles.buttonBack}`} onClick={() => navigate(-1)}>Indietro</button>
+            <section className={`${styles.bodyTravelers}`} >
+                <div>
+                    <button className={`${styles.buttonBack}`} onClick={() => navigate(-1)}>Indietro</button>
 
 
-                <div className="d-flex justify-content-center mb-4">
-                    <div>
-                        <input
-                            type="search"
-                            placeholder="Cerca per cognome"
-                            name="search"
-                            value={query}
-                            onKeyUp={(event) => handleEnterKey(event)}
-                            onChange={event => setQuery(event.target.value)}
-                        />
+                    <div className="d-flex justify-content-center mb-4">
+                        <div>
+                            <input
+                                type="search"
+                                placeholder="Cerca per cognome"
+                                name="search"
+                                value={query}
+                                onKeyUp={(event) => handleEnterKey(event)}
+                                onChange={event => setQuery(event.target.value)}
+                            />
 
 
-                        <button
-                            className={`${styles.buttonBack}`}
-                            onClick={() => {
-                                setSearch(query); // aggiorna il valore di search con il valore dell'input
-                                getViaggiatori();  // chiama la funzione per ottenere i viaggiatori
-                            }}
-                        >
-                            Cerca
-                        </button>
+                            <button
+                                className={`${styles.buttonBack}`}
+                                onClick={() => {
+                                    setSearch(query); // aggiorna il valore di search con il valore dell'input
+                                    getViaggiatori();  // chiama la funzione per ottenere i viaggiatori
+                                }}
+                            >
+                                Cerca
+                            </button>
 
+                        </div>
+                    </div>
+
+                    <div className="d-flex justify-content-around ">
+                        <div>
+                            <ul className="list-unstyled"> <div className={`${styles.titleTravelers}`}>Elenco Viaggiatori</div>
+                                {viaggiatori && viaggiatori.map((curTraveler, index) => (
+                                    <li key={index}>
+
+                                        <button className={`${styles.buttontravelers} ${selectTraveler === curTraveler ? styles.active : ''}`} onClick={() => handlerTravelClick(curTraveler)}>
+                                            {curTraveler.nome} {curTraveler.cognome}
+                                        </button>
+
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div>
+                            {selectTraveler && (
+                                <div className={`${styles.containerCard} d-flex flex-column`}>
+
+                                    <div className={`${styles.titleCard}`}>
+                                        {selectTraveler.nome} {selectTraveler.cognome}
+                                    </div>
+                                    <div className={`${styles.dettailsCard}`}>
+                                        <p>Numero di telefono: {selectTraveler.telefono}</p>
+                                        <p>email: {selectTraveler.mail}</p>
+                                        <p>Codice Fiscale: {selectTraveler.codiceFiscale}</p>
+                                    </div>
+
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
-
-                <div className="d-flex justify-content-around ">
-                    <div>
-                        <ul className="list-unstyled">
-                            {viaggiatori && viaggiatori.map((curTraveler, index) => (
-                                <li key={index}>
-
-                                    <button className={`${styles.buttontravelers}`} onClick={() => handlerTravelClick(curTraveler)}>
-                                        {curTraveler.nome} {curTraveler.cognome}
-                                    </button>
-
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div>
-                        {selectTraveler && (
-                            <div className={`${styles.containerCard} d-flex flex-column`}>
-
-                                <div className={`${styles.titleCard}`}>
-                                    {selectTraveler.nome} {selectTraveler.cognome}
-                                </div>
-                                <div className={`${styles.dettailsCard}`}>
-                                    <p>Numero di telefono: {selectTraveler.telefono}</p>
-                                    <p>email: {selectTraveler.mail}</p>
-                                    <p>Codice Fiscale: {selectTraveler.codiceFiscale}</p>
-                                </div>
-
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
+            </section>
         </>
     );
 };
