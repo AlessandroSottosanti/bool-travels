@@ -19,17 +19,18 @@ const HomePage = () => {
     }
 
     return (
+        <section className="bodyHome">
         <div className="container my-5">
-            <Link to="/FormTravelPage" className="btn btn-primary my-4">+ Aggiungi un nuovo viaggio</Link>
+            <Link to="/FormTravelPage" className="genericButton">+ Aggiungi un nuovo viaggio</Link>
 
             <div>
-                <h1 className="mb-4">Lista Viaggi</h1>
+                <h1 className="mb-4 titleSection">Lista Viaggi</h1>
                 <div className="row ">
                     {viaggi && viaggi.map((viaggio, index) => ( viaggio.inCorso ? (
                         <div key={index} className="col-md-4 mb-4">
                             <div className="card shadow ">
                                 <div className="card-header">
-                                    <h3 className="card-title">{viaggio.destinazione}</h3>
+                                    <h3 className="titleCard">{viaggio.destinazione}</h3>
                                 </div>
                                 <div className="card-body">
 
@@ -46,7 +47,7 @@ const HomePage = () => {
                                     </p>
 
                                     {/* <div>{viaggio.inCorso? (<p>Evento in corso</p>) : (<p>Evento scaduto</p>) }</div> */}
-                                    <Link to={`travelers/${viaggio.slug}`} className="btn btn-primary mt-2 w-100" onClick={() => setViaggioSelezionato(viaggio)}>
+                                    <Link to={`travelers/${viaggio.slug}`} className="buttonDettails" onClick={() => setViaggioSelezionato(viaggio)}>
                                         Vedi Dettagli
                                     </Link>
                                 </div>
@@ -59,6 +60,7 @@ const HomePage = () => {
             </div>
 
         </div>
+        </section>
     );
 };
 

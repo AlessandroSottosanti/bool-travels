@@ -11,19 +11,97 @@ body,
   flex-direction: column;
 }
 
+ul li,
+a {
+  text-decoration: none;
+  color: black;
+}
 
-.navstyle{
+.bodyHome {
+ height: max-content;
+  background-image: url(https://cdn.pixabay.com/photo/2014/08/18/15/47/digital-art-420830_1280.png);
+  background-size: cover;
+
+}
+
+.titleSection {
+
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+.navstyle {
   display: flex;
   justify-content: center;
   width: 100%;
   min-height: 100px;
   background-color: #ffa141;
-background-size: 100%;
-background-repeat: no-repeat;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.homeImg{
-  height: 100%;
+.homeImg {
+  height: 80%;
   object-fit: cover;
 }
 
+/* card section */
+.titleCard{
+  padding:10px;
+  text-align: center;
+  background-color: #dd6c04;
+  border-radius: 10px;
+  color: white;
+  
+  }
+
+  .buttonDettails{
+   
+width: 100%;
+background-color: white;
+color: black;
+border: none;
+font-family: cursive;
+cursor: pointer;
+margin: 5px;
+transition: background-color 0.3s;
+  display: inline-block;
+  text-align: center;
+  animation: pulse 2s infinite ease-in-out;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05); /* Leggero ingrandimento */
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+/* bottini sparsi per le pagine */
+
+.genericButton{
+  padding: 12px 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #dd6c04;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+
+.genericButton:hover {
+  transform: scale(1.05);
+}

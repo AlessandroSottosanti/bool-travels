@@ -48,7 +48,7 @@ const TravelersPage = () => {
         <>
             <section className={`${styles.bodyTravelers}`} >
                 <div>
-                    <Link to={`/`} className={`${styles.buttonBack}`}>Indietro</Link>
+                    <Link to={`/`} className="genericButton">Indietro</Link>
 
 
                     <div className="d-flex justify-content-center mb-4">
