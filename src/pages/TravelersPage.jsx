@@ -32,7 +32,7 @@ const TravelersPage = () => {
             getViaggiatori();
         }
     };
-    
+
     // funzione per ottenere i viaggiatori
     const getViaggiatori = () => {
         axios.get(`${apiUrl}/travels/travelers/${slug}`, { params: { search } })
@@ -92,16 +92,15 @@ const TravelersPage = () => {
 
                     <div>
                         {selectTraveler && (
-                            <div className={`${styles.containerCard}`}>
+                            <div className={`${styles.containerCard} d-flex flex-column`}>
 
                                 <div className={`${styles.titleCard}`}>
                                     {selectTraveler.nome} {selectTraveler.cognome}
                                 </div>
                                 <div className={`${styles.dettailsCard}`}>
-                                    Numero di telefono: {selectTraveler.telefono}
-                                </div>
-                                <div className={`${styles.dettailsCard}`}>
-                                    email: {selectTraveler.mail}
+                                    <p>Numero di telefono: {selectTraveler.telefono}</p>
+                                    <p>email: {selectTraveler.mail}</p>
+                                    <p>Codice Fiscale: {selectTraveler.codiceFiscale}</p>
                                 </div>
 
                             </div>
