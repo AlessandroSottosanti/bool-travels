@@ -20,7 +20,7 @@ const HomePage = () => {
 
     return (
         <div className="container my-5">
-            <Link to="/FormPage" className="btn btn-primary">Aggiungi un nuovo viaggio</Link>
+            <Link to="/FormPage" className="btn btn-primary my-4">+ Aggiungi un nuovo viaggio</Link>
 
             <div>
                 <h1 className="mb-4">Lista Viaggi</h1>

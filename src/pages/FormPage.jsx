@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function FormPage() {
     const DefaultFormData = {
@@ -12,6 +13,8 @@ function FormPage() {
     }
 
     const [viaggioData, setViaggioData] = useState(DefaultFormData);
+
+    const navigate = useNavigate();
 
     const handleInputChange = (event) => {
         const fieldName = event.target.name;
@@ -31,7 +34,9 @@ function FormPage() {
 
     return (
         <>
-            <div className="container">
+            <div className="container my-4">
+                <button onClick={() => navigate(-1)}>Indietro</button>
+
                 <form onSubmit={handleFormSubmit}>
                     <h2 className="text-center">Aggiungi un viaggio</h2>
                     <div class="form-group mb-3">
@@ -52,6 +57,7 @@ function FormPage() {
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+
             </div>
         </>
     )
