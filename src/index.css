@@ -17,6 +17,9 @@ body,
   justify-content: center;
   width: 100%;
   min-height: 100px;
+  background-image: url(https://cdn.pixabay.com/photo/2016/08/01/18/20/banner-1561704_1280.jpg);
+background-size: 100%;
+background-repeat: no-repeat;
 }
 
 .homeImg{
