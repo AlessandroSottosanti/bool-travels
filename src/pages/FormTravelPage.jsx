@@ -60,7 +60,8 @@ function FormTravelPage() {
         .then(response => {
             console.log("Viaggio creato con successo:", response.data);
             setViaggioData(DefaultFormData);
-            navigate("/formtravelerspage", { state: { viaggioData: response.data } });
+            const slug = response.data.slug;
+            navigate(`/formtravelerspage/${slug}`, { state: { viaggioData: response.data } });
         })
         .catch((error , response) => {
             console.error("Errore durante l'invio dei dati:", error.response?.data || error.message);
@@ -71,9 +72,8 @@ function FormTravelPage() {
 
     return (
         <>
-        <section>
             <div className="container my-4">
-                <Link className="genericButton" to={`/`}>Indietro</Link>
+                <Link className="btn btn-primary" to={`/`}>Indietro</Link>
 
                 <form onSubmit={handleFormSubmit}>
                     <h2 className="text-center">Aggiungi un viaggio</h2>
@@ -108,10 +108,9 @@ function FormTravelPage() {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <button type="submit" className="genericButton">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
-            </section>
         </>
     )
 }

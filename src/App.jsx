@@ -16,7 +16,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path='/travelers/:slug' element={<TravelersPage />} />
             <Route path='/formtravelpage' element={<FormTravelPage />} />
-            <Route path='/formtravelerspage' element={<FormTravelersPage />}/>
+            <Route path='/formtravelerspage/:slug' element={<FormTravelersPage />}/>
           </Route>
         </Routes>
       </BrowserRouter>
