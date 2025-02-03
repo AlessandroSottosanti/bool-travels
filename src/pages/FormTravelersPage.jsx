@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const FormTravelersPage = () => {
     const defaultFormData = {
         nome: "",
@@ -6,6 +8,8 @@ const FormTravelersPage = () => {
         mail: "",
         telefono: ""
     }
+    
+    const [travelers, setTravelers] = useState(defaultFormData);
 
     const viaggioData = location.state?.viaggioData || {};
     return (
@@ -14,3 +18,5 @@ const FormTravelersPage = () => {
         </>
     )
 }
+
+export default FormTravelersPage
