@@ -48,6 +48,8 @@ function FormTravelPage() {
                 dataToSend.append(key, viaggioData[key]);
             }
         }
+
+        navigate("/formtravelerspage", { state: { viaggioData } });
     };
 
 
