@@ -20,7 +20,7 @@ const FormTravelersPage = () => {
     }
 
     const handleAddTraveler = () => {
-        setTravelers([...travelers, { ...defaultFormData }]);
+        setTravelers(defaultFormData);
     };
 
     const handleFormSubmit = (event) => {
@@ -66,6 +66,13 @@ const FormTravelersPage = () => {
                     <br />
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
+
+                {travelers.length > 0 && (
+                    <div className="mt-4">
+                        <h3>Viaggiatori già inseriti</h3>
+                        <table></table>
+                    </div>
+                )}
             </div>
         </>
     )
