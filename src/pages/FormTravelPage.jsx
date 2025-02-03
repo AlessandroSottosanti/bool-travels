@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function FormTravelPage() {
     const DefaultFormData = {
@@ -56,7 +56,7 @@ function FormTravelPage() {
     return (
         <>
             <div className="container my-4">
-                <button onClick={() => navigate(-1)}>Indietro</button>
+                <Link className="btn btn-primary" to={`/`}>Indietro</Link>
 
                 <form onSubmit={handleFormSubmit}>
                     <h2 className="text-center">Aggiungi un viaggio</h2>

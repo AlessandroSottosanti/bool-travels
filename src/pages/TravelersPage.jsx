@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from './travelersPage.module.css';
 import axios from "axios";
 const apiUrl = import.meta.env.VITE_API_URL;
@@ -48,7 +48,7 @@ const TravelersPage = () => {
         <>
             <section className={`${styles.bodyTravelers}`} >
                 <div>
-                    <button className={`${styles.buttonBack}`} onClick={() => navigate(-1)}>Indietro</button>
+                    <Link to={`/`} className={`${styles.buttonBack}`}>Indietro</Link>
 
 
                     <div className="d-flex justify-content-center mb-4">
