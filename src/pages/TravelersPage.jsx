@@ -49,6 +49,7 @@ const TravelersPage = () => {
             <div>
                 <button className={`${styles.buttonBack}`} onClick={() => navigate(-1)}>Indietro</button>
 
+
                 <div className="d-flex justify-content-center mb-4">
                     <div>
                         <input
@@ -60,6 +61,7 @@ const TravelersPage = () => {
                             onChange={event => setQuery(event.target.value)}
                         />
 
+
                         <button
                             className={`${styles.buttonBack}`}
                             onClick={() => {
@@ -69,6 +71,7 @@ const TravelersPage = () => {
                         >
                             Cerca
                         </button>
+
                     </div>
                 </div>
 
@@ -77,9 +80,11 @@ const TravelersPage = () => {
                         <ul className="list-unstyled">
                             {viaggiatori && viaggiatori.map((curTraveler, index) => (
                                 <li key={index}>
+
                                     <button className={`${styles.buttontravelers}`} onClick={() => handlerTravelClick(curTraveler)}>
                                         {curTraveler.nome} {curTraveler.cognome}
                                     </button>
+
                                 </li>
                             ))}
                         </ul>
@@ -88,6 +93,7 @@ const TravelersPage = () => {
                     <div>
                         {selectTraveler && (
                             <div className={`${styles.containerCard}`}>
+
                                 <div className={`${styles.titleCard}`}>
                                     {selectTraveler.nome} {selectTraveler.cognome}
                                 </div>
@@ -97,6 +103,7 @@ const TravelersPage = () => {
                                 <div className={`${styles.dettailsCard}`}>
                                     email: {selectTraveler.mail}
                                 </div>
+
                             </div>
                         )}
                     </div>
