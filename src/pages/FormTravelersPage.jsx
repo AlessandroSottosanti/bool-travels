@@ -1,4 +1,9 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+const apiUrl = import.meta.env.VITE_API_URL;
+
 
 const FormTravelersPage = () => {
     const defaultFormData = {
@@ -12,8 +17,9 @@ const FormTravelersPage = () => {
 
     const [travelers, setTravelers] = useState([]);
     const [formData, setFormData] = useState(defaultFormData);
+    const {slug} = useParams();
 
-
+    const navigate = useNavigate();
     // useEffect(() => {
 
     // }, []);
@@ -33,6 +39,21 @@ const FormTravelersPage = () => {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log(travelers);
+        console.log(slug);
+
+        const reqBody = {"viaggiatori" : travelers};
+        axios.post(`${apiUrl}/travels/travelers/${slug}`, reqBody)
+        .then((resp) => {
+            console.log(resp);
+            setFormData(defaultFormData);
+            setTravelers([]);
+            navigate(`/`);
+        })
+        .catch((err) => {
+            console.log(reqBody);
+            console.log(err);
+        });
+
     }
 
     const handleRemoveTraveler = (index) => {

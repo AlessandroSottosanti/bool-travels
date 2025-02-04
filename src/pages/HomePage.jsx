@@ -15,6 +15,9 @@ const HomePage = () => {
         axios.get(`${apiUrl}/travels`)
             .then((resp) => {
                 setViaggi(resp.data.data)
+            })
+            .catch((err) => {
+                console.log(err);
             });
     }
 
@@ -26,8 +29,8 @@ const HomePage = () => {
             <div>
                 <h1 className="mb-4 titleSection">Lista Viaggi</h1>
                 <div className="row ">
-                    {viaggi && viaggi.map((viaggio, index) => ( viaggio.inCorso ? (
-                        <div key={index} className="col-md-4 mb-4">
+                    {viaggi && viaggi.map((viaggio) => ( viaggio.inCorso ? (
+                        <div key={viaggio.id} className="col-md-4 mb-4">
                             <div className="card shadow ">
                                 <div className="card-header">
                                     <h3 className="titleCard">{viaggio.destinazione}</h3>
