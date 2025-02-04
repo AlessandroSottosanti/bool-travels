@@ -50,9 +50,11 @@ const HomePage = () => {
                                     </p>
 
                                     {/* <div>{viaggio.inCorso? (<p>Evento in corso</p>) : (<p>Evento scaduto</p>) }</div> */}
+                                    <div className="d-flex">
                                     <Link to={`travelers/${viaggio.slug}`} state={{ nomeViaggio: viaggio.destinazione }} className="buttonDettails" onClick={() => setViaggioSelezionato(viaggio)}>
                                         Vedi Dettagli
                                     </Link>
+                                        </div>
                                 </div>
                             </div>
                         </div>

@@ -79,7 +79,7 @@ function FormTravelPage() {
         })
         .catch(error => {
             console.error("Errore durante l'invio dei dati:", error.response?.data || error.message);
-            alert("Errore durante l'invio del viaggio. Riprova più tardi.");
+            alert("Errore durante l'invio del viaggio. Probabilmente il viaggio è già presente.");
         });
     };
 
