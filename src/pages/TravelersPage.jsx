@@ -53,9 +53,7 @@ const TravelersPage = () => {
                 <div>
                     <Link to={`/`} className="genericButton">Indietro</Link>
 
-                    <div>{nomeViaggio}</div>
-
-
+                   
                     <div className="d-flex justify-content-center mb-4">
                         <div>
                             <input
@@ -80,6 +78,8 @@ const TravelersPage = () => {
 
                         </div>
                     </div>
+
+                    <div className={`${styles.tripTag}`}>{nomeViaggio}</div>
 
                     <div className="d-flex justify-content-around ">
                         <div>

@@ -117,6 +117,7 @@ transition: background-color 0.3s;
 }
 
 
+
 .genericButton:hover {
   transform: scale(1.05);
 }
