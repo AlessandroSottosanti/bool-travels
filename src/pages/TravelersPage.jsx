@@ -11,6 +11,7 @@ const TravelersPage = () => {
     const [selectTraveler, setSelectTraveler] = useState(null);  // stato per il passeggero selezionato
     const [search, setSearch] = useState("");  // stato per la ricerca
     const [query, setQuery] = useState("");  // stato per il valore di input della ricerca
+    const [errorMessage, setErrorMessage] = useState('');
 
     const location = useLocation();
     const nomeViaggio = location.state?.nomeViaggio || "Nome non disponibile";
@@ -40,10 +41,12 @@ const TravelersPage = () => {
     const getViaggiatori = () => {
         axios.get(`${apiUrl}/travels/travelers/${slug}`, { params: { search } })
             .then((resp) => {
-                setViaggiatori(resp.data.data);
+                setViaggiatori(resp.data.data)
+                setErrorMessage('')
             })
             .catch((err) => {
                 console.log(err);
+                setErrorMessage('Nessun viaggiatore trovato')
             });
     };
 
@@ -53,7 +56,7 @@ const TravelersPage = () => {
                 <div>
                     <Link to={`/`} className="genericButton">Indietro</Link>
 
-                   
+
                     <div className="d-flex justify-content-center mb-4">
                         <div>
                             <input
@@ -94,6 +97,10 @@ const TravelersPage = () => {
                                     </li>
                                 ))}
                             </ul>
+
+                            {errorMessage && (
+                                <div className="alert alert-warning mt-3">{errorMessage}</div>
+                            )}
                         </div>
 
                         <div>
