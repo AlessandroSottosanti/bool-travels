@@ -58,11 +58,12 @@ const TravelersPage = () => {
 
 
                     <div className="d-flex justify-content-center mb-4">
-                        <div>
+                        <div className="d-flex">
                             <input
                                 type="search"
                                 placeholder="Cerca per cognome"
                                 name="search"
+                                className="form-control"
                                 value={query}
                                 onKeyUp={(event) => handleEnterKey(event)}
                                 onChange={event => setQuery(event.target.value)}
@@ -82,7 +83,10 @@ const TravelersPage = () => {
                         </div>
                     </div>
 
-                    <div className={`${styles.tripTag}`}>{nomeViaggio}</div>
+                    <div className="d-flex justify-content-center">
+                        <div className={`${styles.tripTag}`}>{nomeViaggio}</div>
+
+                    </div>
 
                     <div className="d-flex justify-content-around ">
                         <div>
