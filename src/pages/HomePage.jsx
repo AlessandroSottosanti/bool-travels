@@ -24,7 +24,7 @@ const HomePage = () => {
     return (
         <section className="bodyHome">
         <div className="container my-5">
-            <Link to="/FormTravelPage" className="genericButton">+ Aggiungi un nuovo viaggio</Link>
+            <Link to="/FormTravelPage" className="buttonAddTrip"><span>+ Aggiungi un nuovo viaggio</span></Link>
 
             <div>
                 <h1 className="mb-4 titleSection">Lista Viaggi</h1>

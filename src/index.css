@@ -10,6 +10,10 @@ body,
   display: flex;
   flex-direction: column;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
 
 ul li,
 a {
@@ -28,7 +32,6 @@ img{
 
 
 .titleSection {
-
   margin: 5px;
   padding: 5px;
   text-align: center;
@@ -43,7 +46,8 @@ img{
   display: flex;
   justify-content: center;
   background-color: #ffa141;
-
+  margin-bottom: -2px;
+  
 }
 
 .homeImg {
@@ -91,6 +95,7 @@ transition: background-color 0.3s;
 
 .genericButton{
   padding: 12px 15px;
+  margin: 13px;
       font-size: 16px;
       font-weight: bold;
       color: white;
@@ -100,8 +105,55 @@ transition: background-color 0.3s;
       cursor: pointer;
       transition: background-color 0.3s, transform 0.3s ease-in-out;
 }
+.guideButton{
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #dd6c04;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+}
 
 
 .genericButton:hover {
   transform: scale(1.05);
+}
+
+.buttonAddTrip{
+  padding: 12px 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #dd6c04;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 576px) {
+  .buttonAddTrip{
+    width: 50px;              
+    height: 50px;             
+    border-radius: 50%;       
+    padding: 0;               
+    font-size: 30px;          
+    text-align: center;        
+    background-color: #dd6c04;
+    display: flex;
+    justify-content: center;
+  }
+  .buttonAddTrip span {
+  display: none;
+}
+.buttonAddTrip::before {
+  content: "+";
+  font-size: 30px;
+  display: block;
+  text-align: center;
+}
+
 }

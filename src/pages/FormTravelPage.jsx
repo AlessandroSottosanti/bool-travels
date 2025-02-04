@@ -85,7 +85,7 @@ function FormTravelPage() {
 
     return (
         <div className="container my-4">
-            <Link className="btn btn-primary mb-3" to={`/`}>Indietro</Link>
+            <Link className="genericButton" to={`/`}>Indietro</Link>
 
             <form onSubmit={handleFormSubmit}>
                 <h2 className="text-center">Aggiungi un viaggio</h2>
@@ -111,7 +111,7 @@ function FormTravelPage() {
                     <div className="d-flex gap-2">
                         <input type="text" className="form-control" placeholder="Nome della guida" value={nomeGuida} onChange={(e) => setNomeGuida(e.target.value)} />
                         <input type="text" className="form-control" placeholder="Cognome della guida" value={cognomeGuida} onChange={(e) => setCognomeGuida(e.target.value)} />
-                        <button type="button" className="btn btn-success" onClick={handleAddGuide}>Aggiungi</button>
+                        <button type="button" className="guideButton" onClick={handleAddGuide}>Aggiungi</button>
                     </div>
                 </div>
 
@@ -130,7 +130,7 @@ function FormTravelPage() {
                     </div>
                 )}
 
-                <button type="submit" className="btn btn-primary">Salva Viaggio</button>
+                <button type="submit" className="genericButton">Salva Viaggio</button>
             </form>
         </div>
     );
