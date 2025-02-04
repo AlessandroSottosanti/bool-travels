@@ -106,6 +106,7 @@ transition: background-color 0.3s;
       transition: background-color 0.3s, transform 0.3s ease-in-out;
 }
 .guideButton{
+      padding: 5px;
       font-size: 16px;
       font-weight: bold;
       color: white;

@@ -95,10 +95,10 @@ const FormTravelersPage = () => {
                         </div>
                     </div>
                     <div className="container d-flex gap-5 justify-content-between mb-3">
-                    <button type="button" className="btn btn-primary " onClick={handleAddTraveler}>
+                    <button type="button" className="guideButton " onClick={handleAddTraveler}>
                         + Aggiungi Viaggiatore
                     </button>
-                    <button type="submit" className="btn btn-success">Invia lista viaggiatori</button>
+                    <button type="submit" className="guideButton">Invia lista viaggiatori</button>
                     </div>
                 </form>
 
