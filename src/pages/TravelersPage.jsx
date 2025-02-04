@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import styles from './travelersPage.module.css';
 import axios from "axios";
 const apiUrl = import.meta.env.VITE_API_URL;
@@ -11,6 +11,9 @@ const TravelersPage = () => {
     const [selectTraveler, setSelectTraveler] = useState(null);  // stato per il passeggero selezionato
     const [search, setSearch] = useState("");  // stato per la ricerca
     const [query, setQuery] = useState("");  // stato per il valore di input della ricerca
+
+    const location = useLocation();
+    const nomeViaggio = location.state?.nomeViaggio || "Nome non disponibile";
 
     const navigate = useNavigate();
 
@@ -49,6 +52,8 @@ const TravelersPage = () => {
             <section className={`${styles.bodyTravelers}`} >
                 <div>
                     <Link to={`/`} className="genericButton">Indietro</Link>
+
+                    <div>{nomeViaggio}</div>
 
 
                     <div className="d-flex justify-content-center mb-4">

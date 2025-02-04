@@ -50,7 +50,7 @@ const HomePage = () => {
                                     </p>
 
                                     {/* <div>{viaggio.inCorso? (<p>Evento in corso</p>) : (<p>Evento scaduto</p>) }</div> */}
-                                    <Link to={`travelers/${viaggio.slug}`} className="buttonDettails" onClick={() => setViaggioSelezionato(viaggio)}>
+                                    <Link to={`travelers/${viaggio.slug}`} state={{ nomeViaggio: viaggio.destinazione }} className="buttonDettails" onClick={() => setViaggioSelezionato(viaggio)}>
                                         Vedi Dettagli
                                     </Link>
                                 </div>
