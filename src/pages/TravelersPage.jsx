@@ -115,9 +115,9 @@ const TravelersPage = () => {
                                         {selectTraveler.nome} {selectTraveler.cognome}
                                     </div>
                                     <div className={`${styles.dettailsCard}`}>
-                                        <p className={`${styles.dettailsZone}`}>Numero di telefono: {selectTraveler.telefono}</p>
-                                        <p className={`${styles.dettailsZone}`}>email: {selectTraveler.mail}</p>
-                                        <p className={`${styles.dettailsZone}`}>Codice Fiscale: {selectTraveler.codiceFiscale}</p>
+                                        <p className={`${styles.dettailsZone}`}><strong>Numero di telefono: </strong> {selectTraveler.telefono}</p>
+                                        <p className={`${styles.dettailsZone}`}><strong> email: </strong> {selectTraveler.mail}</p>
+                                        <p className={`${styles.dettailsZone}`}><strong> Codice Fiscale: </strong> {selectTraveler.codiceFiscale}</p>
                                     </div>
 
                                 </div>

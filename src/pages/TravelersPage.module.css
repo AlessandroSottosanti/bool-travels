@@ -64,11 +64,11 @@ transition: background-color 0.3s;
 
 .titleTravelers{
   margin: 5px;
-  border: 1px solid black;
   padding: 5px;
 width: 100%;
 text-align: center;
 background-color: white;
+font-style: italic;
 }
 
 .buttonBack{
@@ -86,7 +86,6 @@ padding: 6px;
 
 .containerCard{
   margin-top: 30px;
-border: 1px solid black;
 background-color: white;
 border-radius: 10px ;
 overflow: hidden;
@@ -103,7 +102,7 @@ color: white;
 
 .dettailsCard{
 padding: 10px;
-background-color: black;
+
 }
 .dettailsZone{
   border: 1px solid  #dd6c04;

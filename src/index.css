@@ -65,6 +65,16 @@ img{
   
   }
 
+  .tripList{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-family: fantasy;
+    margin-bottom: 20px;
+  
+  }
+
+
   .buttonDettails{
    
 width: 100%;

@@ -27,7 +27,7 @@ const HomePage = () => {
             <Link to="/FormTravelPage" className="buttonAddTrip"><span>+ Aggiungi un nuovo viaggio</span></Link>
 
             <div>
-                <h1 className="mb-4 titleSection">Lista Viaggi</h1>
+                <h1 className="mb-4 tripList">Lista Viaggi</h1>
                 <div className="row ">
                     {viaggi && viaggi.map((viaggio) => ( viaggio.inCorso ? (
                         <div key={viaggio.id} className="col-md-4 mb-4">
